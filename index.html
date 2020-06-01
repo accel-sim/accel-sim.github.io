@@ -19,8 +19,8 @@
         </title>
 
         <!-- SITE FAVICON -->
-        <link rel="shortcut icon" type="image/png"
-            href="/assets/img/accel-sim-rough.png"/>
+        <link rel="shortcut icon" type="image/svg"
+            href="assets/img/accelsimlogo/logo-lightbg.svg"/>
 
         <link rel="canonical" href="https://accel-sim.github.io">
 
@@ -44,7 +44,8 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <a class="navbar-brand" href="#"><img
-          src="assets/img/accel-sim-rough.png" width=50pt/></a>
+          src="assets/img/accelsimlogo/logo-lightbg.svg"
+          width="30pt"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -76,7 +77,8 @@
       <div class="jumbotron">
       <div class="container"><center>
             <br><br>
-            <img src="assets/img/accel-sim-rough.png"/><br><br>
+            <img src="assets/img/accelsimlogo/logo-lightbg.svg"
+            class="img-fluid" width="40%"/><br><br>
 
             <a class="btn btn-primary" role="button" href="https://github.com/accel-sim/accel-sim-framework">
                 <i class="fa fa-github"></i> View on Github
@@ -96,18 +98,28 @@
         <div class="row">
           <div class="col-md-4">
             <h2>Extensively Validated</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p> Using the GPGPU-Sim 4.0 performance model, Accel-Sim is highly
+            correalted to the newest NVIDIA architectures.<br>
+<!--            <img src="assets/img/qv100-cycles.png" width="250pt"/> -->
+            </p>
+            <p><a class="btn btn-secondary" href=""
+            role="button">Try the simulator &raquo;</a></p>
           </div>
           <div class="col-md-4">
             <h2>Simulate SASS for any CUDA App</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p>No functional implementation required. Trace any CUDA binary,
+            including those using cuBLAS, cuDNN, pyTorch, etc. If it runs in
+            silicon: you can simulate it with mininal effort in Accel-Sim.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Generate your
+            own traces &raquo;</a></p>
           </div>
           <div class="col-md-4">
             <h2>Quickly Validate Against Silicon</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p>Simulator correlation is highly application-dependent. Accel-Sim
+            provides a streamlined workflow to generate detailed correlation
+            information with little effort.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Generate your
+            own correlation &raquo;</a></p>
           </div>
         </div>
 

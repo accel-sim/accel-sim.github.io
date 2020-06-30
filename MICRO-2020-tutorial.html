@@ -1,15 +1,116 @@
 <html>
 
-   <head>
-      <title>MICRO 2020 Tutorial</title>
-   </head>
+       <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34667865-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
+          gtag('config', 'UA-34667865-3');
+        </script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>
+            Accel-Sim: The Accel-Sim Framework
+        </title>
+
+        <!-- SITE FAVICON -->
+        <link rel="shortcut icon" type="image/svg"
+            href="assets/img/accelsimlogo/logo-lightbg.svg"/>
+
+        <link rel="canonical" href="https://accel-sim.github.io">
+
+        <!-- FAVICON -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+    </head>
+	
     <body>
 
-<p style="text-align:center">MICRO 2020 Tutorial</p>
-    
-       
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="#"><img
+          src="assets/img/accelsimlogo/logo-lightbg.svg"
+          width="30pt"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <!--
+          <li class="nav-item">
+            <a class="nav-link"
+                href="https://github.com/accel-sim/accel-sim-framework">
+                Quick Start Guide
+            </a>
+          </li>
+          -->
+		  <li class="nav-item">
+            <a class="nav-link" href="#Objective">Objective</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#overview">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Organizers">Organizers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Schedule">Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://groups.google.com/forum/#!forum/accel-sim">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
+    <main role="main" class="container">
+      <div class="jumbotron">
+      <div class="container"><center>
+	  <div class="row">
+            <h1 class="col-md-12 text-center">
+                Accel-Sim Tutorial @MICRO 2020</br>
+            </h1>
+        </div>
+            <br><br>
+            <img src="assets/img/accelsimlogo/logo-lightbg.svg"
+            class="img-fluid" width="40%"/><br><br>
+
+<!--
+            <a class="btn btn-primary" role="button" href="https://github.com/accel-sim/accel-sim-framework">
+                <i class="fa fa-github"></i> View on Github
+            </a>
+            <a href="https://travis-ci.org/github/purdue-aalp/gpgpu-sim_distribution">
+               </i><img src="https://travis-ci.org/purdue-aalp/gpgpu-sim_distribution.svg?branch=master">
+            </a><br><br>
+            -->
+
+        <p class="lead">Accel-Sim is a simulation framework for simulating and
+            validating programmable accelerators like GPUs. For full details,
+            please see our recent <a href="https://www.iscaconf.org/isca2020/papers/466100a473.pdf">ISCA 2020 paper</a> and download slides from <a href="ISCA2020-presentation-v3.0.pptx"> here</a>.
+            
+
+      </center></div>
+      </div>
+    
+          <h3>Objective</h3>
+            <a name="Objective"></a>
+			Research in the architecture space must ensure that assumptions about
+			contemporary processor design remain true. To help bridge the gap between opaque industrial
+			innovation and public research, we introduce a new simulation framework, Accel-Sim, that make it much easier for
+			GPU simulators to keep up with industry. 
+			The tutorial will go through the new simulation tool step by step and discuss use cases. 
+
+			
+		<hr>
+		
+		
         <h3>Accel-Sim Overview</h3>
             <a name="overview"></a>
             Accel-Sim consists of four main components:
@@ -32,16 +133,8 @@
             <img src="assets/img/accel-sim-crop.svg" class="img-fluid"
             width="75%"/><br><br>
             </center>
-
-            Our <a href="https://drive.google.com/drive/folders/1Q4-y6QTzS_1JoRmTUV31QKpOES9ZY8oG?usp=sharing">ISCA 2020 video</a> details the framework in more
-            detail. We also plan to hold a tutorial in an upcoming architecture
-            confernece, which will be made available online. The Accel-Sim
-            effort includes an extensive update to GPGPU-Sim to make the
-            performance model more closely model contemporary GPU hardware.
-            <a href="qv100-cycles.html">Output from the Accel-Sim Correlator</a>
-            details the cycle-level accuracy improvement.
             
-            <br><br>
+            
             <center>
             <!--
             <iframe
@@ -51,21 +144,39 @@
             </center>
         <hr>
 
-        <h3>Accel-Sim Roadmap</h3>
-            <a name="roadmap"></a>
+        <h3>Organizers</h3>
+            <a name="Organizers"></a>
             <ul>
-                <li><b>June 2020</b>: Initial release of Accel-Sim and
-                GPGPU-Sim 4.0.</li>
-                <li><b>August 2020</b>: Turing traces + advanced trace compression + MLPerf traces </li>
-                <li><b>October 2020</b>: A simple performance model + Multi-GPU simulation </li>
-                <li><b>December 2020</b>: NVIDIA's Ampere architecture modeling and traces </li>
-                <li><b>Early 2021</b>: AMD model and AMD-GCN traces support </li>
+                <li><b>Timothy Rogers</b>: Tim Rogers is an Assistant Professor at Purdue University, where his research focuses on
+                hardware and software systems for accelerators. His research has been recognized with an
+                NSF Career Award in 2020, an NVIDIA graduate fellowship in 2013, best paper nominations at
+                MICRO 2012 and PPoPP 2017, an IEEE Micro Top Picks in Computer Architecture in 2013, as
+                a Communications of the ACM Research Highlight in 2014, and his PhD thesis was nominated
+                for the Governor General's Gold Medal and the 2016 ACM Doctoral Dissertation Award. He
+                completed his PhD in Computer Architecture at the University of British Columbia in 2015.
+                During the course of his PhD, he interned for the research divisions of AMD and NVIDIA, where
+                he worked on the design of future GPU computing microarchitectures. Prior to entering graduate
+                school, he worked as a software engineer at Electronic Arts.</li>
+                <li><b>Mahmoud Khairy</b>: Mahmoud is a 4th year PhD student at Purdue University working with Prof. Tim Rogers. </li>
+                <li><b>Mengchi Zhang</b>: Mengchi is a 5th year PhD student at Purdue University working with Prof. Tim Rogers. </li>
+                <li><b>Jason Shen</b> </li>
+                
+				<hr>
             </ul>
 
-            Accel-Sim is an Open-Source, community-driven framework. If you are
-            interested in contributing, or influencing the roadmap <a
-            href="https://groups.google.com/forum/#!forum/accel-sim">contact
-            us</a>!<br><br>
+        <h3>Schedule</h3>
+            <a name="Schedule"></a>
+            <ul>
+                1- Accel-Sim Overview. <br>
+                2- GPGPU-Sim 4.x Performance Model. <br>
+                3- GPGPU-Sim+SST Integration.  <br>
+                4- NVBIT, Tracer-tool, Trace-driven front-end. <br>
+                5- Correlator, Plotting and Job launching. <br>
+                6- Tuner and micro-benchmarks. <br>
+                7- Demo of end-to-end use case to model Ampere architecture.  <br>
+                8- Future Roadmap and Conclusion.  <br>
+
+            </ul>
 
       </div> <!-- /container -->
 

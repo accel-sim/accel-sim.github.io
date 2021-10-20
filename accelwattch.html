@@ -1,0 +1,151 @@
+<html>
+
+       <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34667865-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-34667865-3');
+        </script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>
+            AccelWattch
+        </title>
+
+        <!-- SITE FAVICON -->
+        <link rel="shortcut icon" type="image/svg"
+            href="assets/img/accelsimlogo/logo-lightbg.svg"/>
+
+        <link rel="canonical" href="https://accel-sim.github.io">
+
+        <!-- FAVICON -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+    </head>
+	
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="#"><img
+          src="assets/img/accelsimlogo/logo-lightbg.svg"
+          width="30pt"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <!--
+          <li class="nav-item">
+            <a class="nav-link"
+                href="https://github.com/accel-sim/accel-sim-framework">
+                Quick Start Guide
+            </a>
+          </li>
+          -->
+          <li class="nav-item">
+            <a class="nav-link" href="#overview">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#manual">Manuel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://groups.google.com/forum/#!forum/accel-sim">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+      <div class="container"><center>
+	  <div class="row">
+            <h1 class="col-md-12 text-center">
+                AccelWattch</br>
+            </h1>
+        </div>
+            <br><br>
+
+
+<!--
+            <a class="btn btn-primary" role="button" href="https://github.com/accel-sim/accel-sim-framework">
+                <i class="fa fa-github"></i> View on Github
+            </a>
+            <a href="https://travis-ci.org/github/purdue-aalp/gpgpu-sim_distribution">
+               </i><img src="https://travis-ci.org/purdue-aalp/gpgpu-sim_distribution.svg?branch=master">
+            </a><br><br>
+            -->
+
+      AccelWattch is a power modeling framework that is extensively validated for modern GPUs and enables reliable design space exploration. Please see our recent <a href="http://paragon.cs.northwestern.edu/papers/2021-MICRO-AccelWattch-Kandiah.pdf">MICRO 2021 paper</a> and download slides from <a href="http://paragon.cs.northwestern.edu/talks/2021-MICRO-AccelWattch-Kandiah-slides.pptx"> here</a>.<br><br>
+			
+			To keep you up-to-date with the recent news on Accel-Sim and AccelWattch, please join our Google group <a
+            href="https://groups.google.com/forum/#!forum/accel-sim">here</a>!<br><br>			
+			
+			If you use GPGPU-Sim 4.x, trace-driven simulation, or any of the Accel-Sim components in your research, please cite:<br>
+
+	<li>Mahmoud Khairy, Jason Shen, Tor M. Aamodt, and Timothy G. Rogers 
+	<i>"Accel-Sim: An Extensible Simulation Framework for Validated GPU Modeling"</i>, 
+	In The 47th International Symposium on Computer Architecture, May 2020 
+	</li><br>            
+
+      </center></div>
+      </div>
+    
+        <h3>AccelWattch Overview</h3>
+            <a name="overview"></a>
+            AccelWattch estimates the constant and static power consumption of a GPU architecture using analytic modeling and hardware power measurements. 
+            <ol>
+                <li><b>Constant Power Model</b>: Accounts for the power consumed by components such as the GPU fans and peripheral circuitry in the presence of DVFS in modern GPUs.</li>
+                <li><b>Static Power Model</b>: Accounts for the chip static power in the presence of power gating, thread divergence, intra-warp functional unit overlap, and variable SM occupancy.</li>
+            </ol>
+			AccelWattch uses microbenchmarking and quadratic programming for dynamic power modeling. The microbenchmarks selectively stress all GPU hardware components and the quadratic programming solver tunes the weight of each component to match hardware power measurements. To model the power consumption of a kernel, AccelWattch couples the tuned per-component power with per-component activity factors obtained from the kernel's execution.
+			Depending on the AccelWattch configuration, activity factors can come from:
+			<ol>
+                <li><b>AccelWattch SASS SIM</b>: Native ISA performance simulation</li>
+				<li><b>AccelWattch PTX SIM</b>: Virtual ISA performance simulation</li>
+				<li><b>AccelWattch HW</b>: Hardware performance counters from execution on real silicon</li>
+				<li><b>AccelWattch HYBRID</b>: Hardware performance counters for some components; performance simulation for others</li>
+            </ol>
+            <center>
+            <img src="assets/img/accelwattch-flowchart.svg" class="img-fluid"
+            width="75%"/><br><br>
+            </center>
+			
+            Our <a href="http://paragon.cs.northwestern.edu/talks/2021-MICRO-AccelWattch-Kandiah-talk.mp4">MICRO 2021 video</a> presents the AccelWattch framework in more detail. 
+            <br><br>
+        <hr>
+
+		<h3>AccelWattch Manual</h3>
+			<a name="manual"></a>
+			<ul>
+			<li> Introduction: The AccelWattch MICRO 2021 paper [<a href="http://paragon.cs.northwestern.edu/papers/2021-MICRO-AccelWattch-Kandiah.pdf">paper</a>, <a href="http://paragon.cs.northwestern.edu/talks/2021-MICRO-AccelWattch-Kandiah-slides.pptx">slides</a>, <a href="http://paragon.cs.northwestern.edu/talks/2021-MICRO-AccelWattch-Kandiah-talk.mp4">video</a>]</li>
+			<li> Beginner guide and how to use: <a href="https://github.com/accel-sim/accel-sim-framework/blob/release-accelwattch/README.md"> AccelWattch beginner manual</a>  
+			</li>
+			<li> To reproduce our key MICRO 2021 results: <a href="https://github.com/accel-sim/accel-sim-framework/blob/release-accelwattch/AccelWattch.md">AccelWattch MICRO'21 artifact manual</a>  </li>
+			</ul>
+			If you have any questions about AccelWattch, please feel free to join our <a href="https://groups.google.com/forum/#!forum/accel-sim">Google group</a>.
+		<hr>
+		<br>
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+

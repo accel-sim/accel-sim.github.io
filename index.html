@@ -18,6 +18,8 @@
             Accel-Sim: The Accel-Sim Framework
         </title>
 
+        <meta name="description" content="Accel-Sim is an extensible, validated framework for cycle-level GPU simulation. Accel-Sim 2.0 adds NVIDIA Hopper (H100 / H200) modeling, LLM tracing with vLLM and PyTorch, and GPUVision cycle-level hardware correlation.">
+
         <!-- SITE FAVICON -->
         <link rel="shortcut icon" type="image/svg"
             href="assets/img/accelsimlogo/logo-lightbg.svg"/>
@@ -63,7 +65,10 @@
             <a class="nav-link" href="#overview">Overview</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="qv100-cycles.html">Correlation Results</a>
+            <a class="nav-link" href="#whatsnew">What's New in 2.0</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#correlation">Correlation Results</a>
           </li>
 		  <li class="nav-item">
             <a class="nav-link" href="#manual">Manual</a>
@@ -75,7 +80,7 @@
             <a class="nav-link" href="accelwattch.html">AccelWattch</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://groups.google.com/forum/#!forum/accel-sim">Contact</a>
+            <a class="nav-link" href="https://github.com/accel-sim/accel-sim-framework/discussions">Discussions</a>
           </li>
         </ul>
       </div>
@@ -91,36 +96,75 @@
             <a class="btn btn-primary" role="button" href="https://github.com/accel-sim/accel-sim-framework">
                 <i class="fa fa-github"></i> View on Github
             </a>
+            <a class="btn btn-success" role="button" href="https://github.com/accel-sim/accel-sim-framework/releases/tag/v2.0.0">
+                <i class="fa fa-download"></i> Get Accel-Sim 2.0
+            </a>
+            <a class="btn btn-secondary" role="button" href="https://arxiv.org/abs/2608.22602">
+                <i class="fa fa-file-text-o"></i> Accel-Sim 2.0 Paper
+            </a><br><br>
             <a href="https://github.com/accel-sim/accel-sim-framework/actions">
-               </i><img
-               src="https://github.com/accel-sim/accel-sim-framework/actions/workflows/long-tests.yml/badge.svg">
+               <img
+               src="https://github.com/accel-sim/accel-sim-framework/actions/workflows/main.yml/badge.svg?branch=dev">
             </a><br><br>
 
-        <p class="lead"><b>02/2025: Accel-Sim v1.3.0 has officially been released!</b><br>
+        <p class="lead"><b>08/2026: Accel-Sim 2.0 has officially been released!</b><br>
            Accel-Sim is a simulation framework for simulating and
-            validating programmable accelerators like GPUs. For full details,
-            please see our recent <a href="https://people.ece.ubc.ca/~aamodt/publications/papers/accelsim.isca2020.pdf">ISCA 2020 paper</a> and download slides from <a href="ISCA2020-presentation-v3.0.pptx"> here</a>.<br><br>	
-			
-			AccelWattch is a power modeling framework that is extensively validated for modern GPUs and enables reliable design space exploration. Please see our recent <a href="http://paragon.cs.northwestern.edu/papers/2021-MICRO-AccelWattch-Kandiah.pdf">MICRO 2021 paper</a>, download slides from <a href="http://paragon.cs.northwestern.edu/talks/2021-MICRO-AccelWattch-Kandiah-slides.pptx"> here</a>, and look at AccelWattch website <a href="accelwattch.html">here</a>.<br><br>
-			
-			To keep you up-to-date with the recent news on Accel-Sim and AccelWattch, please join our Google group <a
-            href="https://groups.google.com/forum/#!forum/accel-sim">here</a>!<br><br>			
-			
-			If you use GPGPU-Sim 4.x, trace-driven simulation, or any of the Accel-Sim components in your research, please cite:<br>
+            validating programmable accelerators like GPUs. Version 2.0 brings
+            NVIDIA <b>Hopper (H100 / H200)</b> modeling to the trace-driven simulator:
+            the Tensor Memory Accelerator (TMA), asynchronous Warp Group MMA (WGMMA),
+            <tt>mbarrier</tt> producer/consumer synchronization, threadblock clusters, and a
+            chiplet / uGPU partitioned memory subsystem. It also ships a rebuilt tracer that
+            can trace <b>vLLM inference and PyTorch training end to end</b>, and
+            <b>GPUVision</b> for cycle-level hardware correlation.
+            See the <a href="https://arxiv.org/abs/2608.22602">Accel-Sim 2.0 paper</a>,
+            the <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/release.notes.md">release notes</a>,
+            and the original <a href="https://people.ece.ubc.ca/~aamodt/publications/papers/accelsim.isca2020.pdf">ISCA 2020 paper</a>
+            (slides <a href="ISCA2020-presentation-v3.0.pptx">here</a>).<br><br>
 
-	<li>Mahmoud Khairy, Jason Shen, Tor M. Aamodt, and Timothy G. Rogers 
-	<i>"Accel-Sim: An Extensible Simulation Framework for Validated GPU Modeling"</i>, 
-	In The 47th International Symposium on Computer Architecture, May 2020 
+			AccelWattch is a power modeling framework that is extensively validated for modern GPUs and enables reliable design space exploration. Please see our recent <a href="http://paragon.cs.northwestern.edu/papers/2021-MICRO-AccelWattch-Kandiah.pdf">MICRO 2021 paper</a>, download slides from <a href="http://paragon.cs.northwestern.edu/talks/2021-MICRO-AccelWattch-Kandiah-slides.pptx"> here</a>, and look at AccelWattch website <a href="accelwattch.html">here</a>.<br><br>
+
+			Subscribe to our <a href="https://groups.google.com/forum/#!forum/accel-sim">Google
+			group</a> to keep up-to-date with the recent news on Accel-Sim and AccelWattch.
+			For questions, contributions and support, please use
+			<a href="https://github.com/accel-sim/accel-sim-framework/discussions">GitHub
+			Discussions</a> and <a href="https://github.com/accel-sim/accel-sim-framework/issues">issues</a>.<br><br>
+			</p>
+
+			<p class="lead"><b>How to cite Accel-Sim.</b> Citations are
+			<b>cumulative</b>. If you use GPGPU-Sim 4.x, trace-driven simulation, or any of
+			the Accel-Sim components in your research, please cite all three base papers:<br>
+
+	<li>Junrui Pan, Weili An, Cesar Avalos Baddouh, Christin David Bose, Ni Kang, Aaron Barnes,
+	Ahmad Alawneh, Fangjia Shen, Yechen Liu, Anusuya Nallathambi, Atthin Chandrashekar, and Timothy G. Rogers
+	<i>"Architecting the Next Generation of Asynchronous, Distributed GPUs for the AI Era"</i>,
+	arXiv:<a href="https://arxiv.org/abs/2608.22602">2608.22602</a>, 2026
+	</li>
+	<li>Mahmoud Khairy, Zhesheng Shen, Tor M. Aamodt, and Timothy G. Rogers
+	<i>"Accel-Sim: An Extensible Simulation Framework for Validated GPU Modeling"</i>,
+	In The 47th International Symposium on Computer Architecture, May 2020
+	</li>
+	<li>Ali Bakhoda, George L. Yuan, Wilson W. L. Fung, Henry Wong, and Tor M. Aamodt
+	<i>"Analyzing CUDA Workloads Using a Detailed GPU Simulator"</i>,
+	In ISPASS 2009
 	</li><br>
 			</p>
-			
-			<p class="lead">If you use any component of the AccelWattch power modeling framework in your research, please cite:<br>
+
+			<p class="lead">If you use any component of the AccelWattch power modeling framework, please cite the following <b>in addition to</b> the base papers above:<br>
 
 	<li>Vijay Kandiah, Scott Peverelle, Mahmoud Khairy, Junrui Pan, Amogh Manjunath, Timothy G. Rogers, Tor M. Aamodt, and Nikos Hardavellas
-	<i>"AccelWattch: A Power Modeling Framework for Modern GPUs"</i>, 
-	<i>In MICRO- 54: 54th Annual IEEE/ACM International Symposium on Microarchitecture</i>,  
-	(MICRO ’21), October 18–22, 2021, Virtual Event, Greece. 
+	<i>"AccelWattch: A Power Modeling Framework for Modern GPUs"</i>,
+	<i>In MICRO- 54: 54th Annual IEEE/ACM International Symposium on Microarchitecture</i>,
+	(MICRO ’21), October 18–22, 2021, Virtual Event, Greece.
 	</li>
+	<li>Jingwen Leng, Tayler Hetherington, Ahmed ElTantawy, Syed Gilani, Nam Sung Kim, Tor M. Aamodt, and Vijay Janapa Reddi
+	<i>"GPUWattch: Enabling Energy Optimizations in GPGPUs"</i>,
+	In ISCA 2013
+	</li><br>
+	Ready-to-use metadata ships with the repo:
+	<a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/CITATION.bib">CITATION.bib</a>
+	(every entry above) and
+	<a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/CITATION.cff">CITATION.cff</a>
+	(machine-readable).
 		</p>
       </center></div>
       </div>
@@ -132,9 +176,10 @@
             <h2>Extensively Validated</h2>
             <p> Using NVIDIA's machine ISA (SASS), integrated into
             GPGPU-Sim 4.x's performance model, Accel-Sim is highly
-            correlated to contemporary NVIDIA architectures. Accel-Sim
-            provides a streamlined workflow to generate detailed correlation
-            information with little effort.<br>
+            correlated to contemporary NVIDIA architectures. Against real H100
+            silicon, Accel-Sim 2.0 reaches a <b>99% Pearson correlation</b> and
+            <b>13.4% mean absolute cycle error</b> over 34,000+ kernel instances
+            from 22 benchmark suites.<br>
 <!--            <img src="assets/img/qv100-cycles.png" width="250pt"/> -->
             </p>
 <!--            <p><a class="btn btn-secondary" href=""
@@ -143,15 +188,17 @@
           <div class="col-md-4">
             <h2>Simulate SASS for any CUDA App</h2>
             <p>No functional implementation required. Trace any CUDA binary,
-            including those using cuBLAS, cuDNN, pyTorch, etc. If it runs in
-            silicon: you can simulate it with mininal effort in Accel-Sim.</p>
+            including those using cuBLAS, CUTLASS, cuDNN, NCCL, FlashAttention-3
+            and PyTorch. Modern LLM workloads can be traced directly out of vLLM
+            or Hugging Face, one model layer at a time. If it runs in
+            silicon: you can simulate it with minimal effort in Accel-Sim.</p>
 <!--            <p><a class="btn btn-secondary" href="#" role="button">Generate your
             own traces &raquo;</a></p>-->
           </div>
 		    <div class="col-md-4">
             <h2>Highly Extensible</h2>
-            <p>Building an extensible simulation for rapidly-evolving GPU architecture is challenging. 
-			Accel-Sim is built to ensure it is up-to-date with industrial designs and 
+            <p>Building an extensible simulation for rapidly-evolving GPU architecture is challenging.
+			Accel-Sim is built to ensure it is up-to-date with industrial designs and
 			reduces the simulation accuracy gap between academia and industry on an ongoing basis.</p>
 <!--            <p><a class="btn btn-secondary" href="#" role="button">Generate your
             own correlation &raquo;</a></p>-->
@@ -166,14 +213,18 @@
 
             <ol>
                 <li><b>Accel-Sim Tracer</b>: An NVBit tool for generating SASS traces
-                from CUDA applications.</li>
+                from CUDA applications. It also hooks live PyTorch processes, so
+                individual layers of an LLM running under vLLM or Hugging Face can be
+                traced selectively.</li>
                 <li><b>Accel-Sim SASS Frontend</b>: A simulator frontend that consumes
                 SASS traces and feeds them into a performance model. The intial
                 release of Accel-Sim coincides with the release of GPGPU-Sim
                 4.0, which acts as the detailed performance model.</li>
                 <li><b>Accel-Sim Correlator</b>: A tool that matches, plots and
                 correlates statistics from the performance model with real
-                hardware statistics generated by profiling tools.</li>
+                hardware statistics generated by profiling tools. As of 2.0,
+                <b>GPUVision</b> extends this to cycle-level correlation using
+                CUPTI PM sampling.</li>
                 <li><b>Accel-Sim Tuner</b>: An automated tuner that automates
                 configuration file generation from a detailed microbenchmark
                 suite.</li>
@@ -188,9 +239,9 @@
             confernece, which will be made available online. The Accel-Sim
             effort includes an extensive update to GPGPU-Sim to make the
             performance model more closely model contemporary GPU hardware.
-            <a href="qv100-cycles.html">Output from the Accel-Sim Correlator</a>
+            <a href="#correlation">Output from the Accel-Sim Correlator</a>
             details the cycle-level accuracy improvement.
-            
+
             <br><br>
             <center>
             <!--
@@ -200,53 +251,121 @@
             -->
             </center>
         <hr>
-		
+
+        <h3>What's New in Accel-Sim 2.0</h3>
+            <a name="whatsnew"></a>
+            Accel-Sim 2.0 models the asynchronous, warp-specialized, persistent execution
+            style of modern AI kernels. Everything below is enabled automatically by the
+            <tt>H100-SASS</tt> / <tt>H200-SASS</tt> configs &mdash; you just trace and run.
+            The <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/release.notes.md">release notes</a>
+            carry the complete changelog and a baseline-vs-2.0 feature table.
+
+            <ul>
+                <li><b>Hopper (H100 / H200) architecture modeling</b>: TMA bulk tensor
+                movement with CGA multicast, asynchronous WGMMA with variable MMA latency,
+                <tt>mbarrier</tt> producer/consumer synchronization with async-proxy fences and
+                dynamic <tt>try_wait</tt> modeling, and threadblock clusters with distributed
+                shared memory.</li>
+                <li><b>Chiplet / uGPU memory subsystem</b>: HBM3 / HBM3e timing, the L2
+                Request Coalescer (LRC), IPOLY+MODULO L2 hashing, chiplet cache policies and
+                a latency-modeled chiplet interconnect.</li>
+                <li><b>LLM tracing</b>: a PyTorch hook toggles NVBit instrumentation around
+                the forward pass of a named layer, so a transformer block can be traced out
+                of a live vLLM or Hugging Face process and extrapolated end to end.</li>
+                <li><b>GPUVision</b>: CUPTI PM-sampling collects hardware counters as a
+                cycle-level time series rather than a per-kernel aggregate, enabling
+                cycle-level correlation against real silicon.</li>
+                <li><b>Rebuilt tracer</b>: NVBit v1.8, register-value tracing for tensor
+                descriptors and <tt>mbarrier</tt> operands, spinloop handling, and a compressed
+                per-warp zstd <tt>.tracez</tt> format with page-based loading that bounds
+                simulator memory to roughly 4&nbsp;GB regardless of kernel size.</li>
+                <li><b>Statistics and speed</b>: 11,072 hardware counters (up from 54), and
+                roughly 2.2&times; faster simulation than Accel-Sim 1.x.</li>
+            </ul>
+        <hr>
+
+        <h3>Correlation Results</h3>
+            <a name="correlation"></a>
+            Accel-Sim 2.0 was validated against real NVIDIA H100 silicon across more than
+            34,000 kernel instances drawn from 22 benchmark suites, including modern LLM
+            inference and training workloads.
+
+            <center>
+            <img src="assets/img/h100_correlation.png" class="img-fluid"
+            width="90%"/><br>
+            <small><i>Simulated vs. real H100 across 34,000+ kernels &mdash; GPC cycles, warp
+            instructions, and L1/L2 accesses &amp; misses. Each panel shows the Pearson
+            correlation and mean absolute percentage error (MAPE) for that metric.</i></small>
+            <br><br>
+            </center>
+
+            Interactive per-kernel correlation plots from the original Accel-Sim release are
+            available for the QV100:
+            <a href="qv100-cycles.html">Output from the Accel-Sim Correlator</a>.
+            You can generate the same plots for your own hardware and configs with the
+            <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/util/plotting/README.md">correlator</a>.
+        <hr>
+
 		<h3>Accel-Sim Manual</h3>
 			<a name="manual"></a>
 			<ul>
-			<li> Introduction: The Accel-Sim ISCA 2020 paper [<a href="https://www.iscaconf.org/isca2020/papers/466100a473.pdf">paper</a>, <a href="ISCA2020-presentation-v3.0.pptx">slides</a>, <a href="https://drive.google.com/drive/folders/1Q4-y6QTzS_1JoRmTUV31QKpOES9ZY8oG?usp=sharing">video</a>]</li>
-			<li> Beginner guide and how to use: <a href="https://github.com/accel-sim/accel-sim-framework/blob/release/README.md"> Accel-Sim beginner manual</a>  
+			<li> Introduction: The Accel-Sim 2.0 paper [<a href="https://arxiv.org/abs/2608.22602">paper</a>], and the Accel-Sim ISCA 2020 paper [<a href="https://people.ece.ubc.ca/~aamodt/publications/papers/accelsim.isca2020.pdf">paper</a>, <a href="ISCA2020-presentation-v3.0.pptx">slides</a>, <a href="https://drive.google.com/drive/folders/1Q4-y6QTzS_1JoRmTUV31QKpOES9ZY8oG?usp=sharing">video</a>]</li>
+			<li> Beginner guide and how to use: <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/README.md"> Accel-Sim beginner manual</a>
+			</li>
+			<li> Release notes and upgrade guide: <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/release.notes.md"> Accel-Sim 2.0 release notes</a>
 			</li>
 			<li>  Accel-Sim per-component manuals: </li>
 			<ul>
-			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/release/util/tracer_nvbit/README.md"> Nvbit tracer</a> </li>
-			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/release/util/hw_stats/README.md"> Collecting HW stats</a>   </li>
-			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/release/util/job_launching/README.md"> Collecting simulation stats</a>  </li>
-			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/release/util/plotting/README.md"> Correlator</a>  </li>
+			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/util/tracer_nvbit/README.md"> Nvbit tracer</a> </li>
+			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/util/tracer_nvbit/others/torch_hook/README.md"> Tracing LLMs with vLLM / PyTorch</a> </li>
+			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/util/hw_stats/README.md"> Collecting HW stats</a>   </li>
+			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/util/hw_stats/pm_cupti_tools/README.md"> GPUVision: cycle-level CUPTI profiling</a>   </li>
+			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/util/job_launching/README.md"> Collecting simulation stats</a>  </li>
+			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/util/plotting/README.md"> Correlator</a>  </li>
 			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/tree/dev/util/tuner/README.md"> Tuner </a> </li>
 			   <li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/gpu-simulator/README.md"> Accel-Sim's Trace-driven front-end </a>  </li>
 			</ul>
-			<li> Performance model manual: 
+			<li> Performance model manual:
 				<ul>
 				<li> Original GPGPU-Sim 3.x manual [<a href="http://gpgpu-sim.org/manual/index.php/Main_Page">manual</a>, <a href="http://www.gpgpu-sim.org/micro2012-tutorial/">slides</a>, <a href="https://www.youtube.com/channel/UCMZLxSL7Ibn6uCvwdZcGqFQ/videos">tutorial videos</a>]  </li>
 				<li> <a href="https://github.com/accel-sim/accel-sim-framework/blob/dev/gpu-simulator/gpgpu-sim4.md"> GPGPU-Sim 4.x changes</a>  </li>
 				</ul>
-			<li> Power model manual: 
+			<li> Power model manual:
 				<ul>
 				<li> <a href="accelwattch.html#manual">AccelWattch manual</a> </li>
 				</ul>
 			</ul>
 
-			If you have any questions about Accel-Sim, please feel free to join our <a href="https://groups.google.com/forum/#!forum/accel-sim">Google group</a>.
+			If you have any questions about Accel-Sim, please ask in <a href="https://github.com/accel-sim/accel-sim-framework/discussions">GitHub Discussions</a>, or open a <a href="https://github.com/accel-sim/accel-sim-framework/issues">GitHub issue</a> for bugs.
 		<hr>
 		<br>
-		
-		
 
-		
+
+
+
         <h3>Accel-Sim Roadmap</h3>
             <a name="roadmap"></a>
+            Delivered in 2.0:
             <ul>
-                <li> Multi-GPU simulation  </li>
-				<li> MLPerf traces </li>
-                <li> NVIDIA's Ampere architecture modeling and traces </li>
-                <li> AMD model and AMD-GCN traces support </li>
+                <li> Hopper (H100 / H200) architecture modeling and traces </li>
+                <li> Ampere architecture modeling and traces </li>
+                <li> LLM inference and training traces (vLLM, PyTorch, FlashAttention-3, CUTLASS, DLRM) </li>
+                <li> Chiplet / uGPU partitioned memory subsystem </li>
+                <li> Cycle-level hardware correlation (GPUVision) </li>
+            </ul>
+
+            Coming next:
+            <ul>
+                <li> Blackwell (B200 / RTX 5090) modeling and traces &mdash; experimental, incoming shortly </li>
+                <li> Multi-GPU / NVLink simulation &mdash; incoming shortly </li>
             </ul>
 
             Accel-Sim is an Open-Source, community-driven framework. If you are
-            interested in contributing, or influencing the roadmap <a
-            href="https://groups.google.com/forum/#!forum/accel-sim">contact
-            us</a>!<br><br>
+            interested in contributing, or influencing the roadmap, start a thread in
+            <a href="https://github.com/accel-sim/accel-sim-framework/discussions">GitHub
+            Discussions</a>. For bugs and concrete feature requests, open a
+            <a href="https://github.com/accel-sim/accel-sim-framework/issues">GitHub
+            issue</a>.<br><br>
 
       </div> <!-- /container -->
 
@@ -257,9 +376,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
   </body>
 </html>
-
-
